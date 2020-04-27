@@ -17,15 +17,13 @@ function dive(arr, i, found) {
 function minimumSwaps(arr) {
     const found = new Map();
     let count = 0;
-    let c = 0;
 
     for (let i = 0; i < arr.length; i++) {
         if (found.has(arr[i])) {
             continue;
         }
 
-        c = dive(arr, i, found);
-        count += c;
+        count += dive(arr, i, found);
     }
 
     return count;
